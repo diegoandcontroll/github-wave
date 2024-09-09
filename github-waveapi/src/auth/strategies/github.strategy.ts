@@ -9,7 +9,7 @@ export class GithubStrategy extends PassportStrategy(Strategy, 'github') {
     super({
       clientID: process.env.GITHUB_CLIENT_ID, // Pegue do arquivo de variáveis de ambiente
       clientSecret: process.env.GITHUB_CLIENT_SECRET, // Pegue do arquivo de variáveis de ambiente
-      callbackURL: 'http://localhost:3000/auth/github/callback',
+      callbackURL: 'http://localhost:8080/auth/github/callback',
       scope: ['user:email'],
     });
   }

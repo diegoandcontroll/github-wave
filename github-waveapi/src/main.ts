@@ -8,15 +8,15 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const config = new DocumentBuilder()
     .addBearerAuth()
-    .setTitle('ConvertaX API')
+    .setTitle('GitWave API')
     .setDescription('Backend Challenge API')
     .setVersion('1.0')
-    .addTag('by DiegoLucas')
+    .addTag('by')
     .build();
   app.enableCors();
   app.setGlobalPrefix('/gitwave/api/v1');
   const document = SwaggerModule.createDocument(app, config);
-  SwaggerModule.setup('/convertax/api/v1/docs', app, document);
+  SwaggerModule.setup('/GitWave/api/v1/docs', app, document);
 
   const reflector = app.get(Reflector);
   app.useGlobalGuards(new RolesGuard(reflector));
