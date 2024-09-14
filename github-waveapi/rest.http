@@ -9,13 +9,12 @@ content-type: application/json
 Authorization: "Bearer "
 
 ###
-POST http://localhost:8080/api/gitwave/v1/auth/signup
-content-type: application/json
+POST http://localhost:8080/api/gitwave/auth/signup
 {
-  "name": "Diego",
+  "name": "yxydiego",
   "email": "test@test.com",
   "password": "test123",
-  "image": "http://localhost:8080/assets/profile.png"
+  "image": "http://localhost:8080/image.png"
 }
 ###
 POST http://localhost:8080/api/gitwave/v1/auth/signin
