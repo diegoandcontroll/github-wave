@@ -14,9 +14,9 @@ async function bootstrap() {
     .addTag('by')
     .build();
   app.enableCors();
-  app.setGlobalPrefix('/gitwave/api/v1');
+  app.setGlobalPrefix('/api/gitwave/v1');
   const document = SwaggerModule.createDocument(app, config);
-  SwaggerModule.setup('/GitWave/api/v1/docs', app, document);
+  SwaggerModule.setup('/api/gitwave/v1/docs', app, document);
 
   const reflector = app.get(Reflector);
   app.useGlobalGuards(new RolesGuard(reflector));
