@@ -1,6 +1,27 @@
+
 GET http://localhost:8080/api/gitwave/v1/users
 content-type: application/json
+
+###
 
 GET http://localhost:8080/api/gitwave/v1/users/profile
 content-type: application/json
 Authorization: "Bearer "
+
+###
+POST http://localhost:8080/api/gitwave/v1/auth/signup
+content-type: application/json
+{
+  "name": "Diego",
+  "email": "test@test.com",
+  "password": "test123",
+  "image": "http://localhost:8080/assets/profile.png"
+}
+###
+POST http://localhost:8080/api/gitwave/v1/auth/signin
+content-type: application/json
+{
+  "email": "test@test.com",
+  "password": "test123"
+}
+
