@@ -1,0 +1,51 @@
+/* IconCarousel.module.css */
+
+.carousel {
+  position: fixed; /* Faz o carrossel ficar fixo na tela */
+  top: 200px;
+  left: -80px;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none; /* Permite interagir com elementos abaixo */
+  z-index: 9999; /* Garante que o carrossel fique sobre outros elementos */
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  border-radius: 50%;
+  animation: rotate 20s linear infinite;
+  z-index: 9999;
+}
+
+.iconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 50px; /* Ajusta o tamanho dos ícones */
+  height: 50px;
+  font-size: 2rem; /* Ajusta o tamanho dos ícones */
+  color: #fff; /* Ajusta a cor dos ícones */
+  z-index: 9999;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Define o posicionamento dos ícones em um círculo */
+.wrapper > div:nth-child(1) { transform: rotate(0deg) translateX(200px) rotate(0deg); }
+.wrapper > div:nth-child(2) { transform: rotate(72deg) translateX(200px) rotate(-72deg); }
+.wrapper > div:nth-child(3) { transform: rotate(144deg) translateX(200px) rotate(-144deg); }
+.wrapper > div:nth-child(4) { transform: rotate(216deg) translateX(200px) rotate(-216deg); }
+.wrapper > div:nth-child(5) { transform: rotate(288deg) translateX(200px) rotate(-288deg); }
