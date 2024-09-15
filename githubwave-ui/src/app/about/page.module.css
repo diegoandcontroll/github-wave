@@ -1,0 +1,119 @@
+/* Estilo principal do container */
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: rgba(0, 0, 0, 0.8); /* Fundo preto semi-transparente */
+  color: white;
+  padding: 2rem;
+}
+
+/* Seção hero com efeito de neon */
+.hero {
+  text-align: center;
+  max-width: 800px;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.6); /* Fundo escuro com transparência */
+  border-radius: 15px;
+  position: relative; /* Para os efeitos de neon */
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+  box-shadow: 0 0 15px rgba(90, 24, 154, 0.7); /* Sombra inicial */
+}
+
+/* Neon ao passar o mouse */
+.hero:hover {
+  transform: scale(1.05); /* Zoom suave */
+  box-shadow: 0 0 30px #5a189a, 0 0 60px #240090, 0 0 100px #1b1464; /* Efeito neon */
+}
+
+/* Animação contínua de neon */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border-radius: 15px;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(90, 24, 154, 0.6) 50%, rgba(0, 0, 0, 0) 100%);
+  animation: neon-glow 2.5s infinite alternate ease-in-out;
+  z-index: -1;
+}
+
+/* Definição da animação */
+@keyframes neon-glow {
+  0% {
+    box-shadow: 0 0 15px rgba(90, 24, 154, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 30px rgba(90, 24, 154, 1);
+  }
+}
+
+/* Título com gradiente e destaque */
+.title {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(90deg, #00b4d8, #5a189a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Subtítulo */
+.subtitle {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #e0e0e0;
+}
+
+/* Descrição do projeto */
+.description {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: #d0d0d0;
+  line-height: 1.6;
+}
+
+/* Container de botões */
+.ctaContainer {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+/* Botão principal */
+.ctaButton {
+  background-color: #5a189a;
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.ctaButton:hover {
+  background-color: #9d4edd;
+  box-shadow: 0 0 20px #9d4edd;
+}
+
+/* Botão secundário */
+.ctaSecondaryButton {
+  background-color: transparent;
+  border: 2px solid #5a189a;
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.ctaSecondaryButton:hover {
+  background-color: #5a189a;
+  color: white;
+}
