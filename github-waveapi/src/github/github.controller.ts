@@ -15,7 +15,7 @@ export class GithubController {
 
   @Public()
   // Endpoint para obter os repositórios do usuário com paginação
-  @Get('user/repos')
+  @Get('repos/:username')
   async getUserRepos(
     @Param('username') username: string,
     @Query('page') page: number = 1,

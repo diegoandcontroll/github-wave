@@ -34,25 +34,25 @@ export class GithubService {
   async getUserRepos(
     username: string,
     page: number = 1,
-    perPage: number = 30,
+    perPage: number = 6,
   ): Promise<any> {
     try {
       const response: AxiosResponse = await firstValueFrom(
-        this.httpService.get(`${this.githubApiReposUrl}/${username}/repos`, {
-          params: { page, per_page: perPage },
-        }),
+        this.httpService.get(
+          `https://api.github.com/users/${username}/repos?per_page=${perPage}&page=${page}`,
+        ),
       );
-
       // Tratar os dados dos repositórios
       const repos = response.data;
-      return repos.map((repo) => ({
-        name: repo.name,
-        description: repo.description,
-        stars: repo.stargazers_count,
-        forks: repo.forks_count,
-        language: repo.language,
-        url: repo.html_url, // Adicionando a URL do repositório
-      }));
+      // return repos.map((repo) => ({
+      //   name: repo.name,
+      //   description: repo.description,
+      //   stars: repo.stargazers_count,
+      //   forks: repo.forks_count,
+      //   language: repo.language,
+      //   url: repo.html_url, // Adicionando a URL do repositório
+      // }));
+      return repos;
     } catch (error) {
       throw new HttpException('Repos not found', HttpStatus.NOT_FOUND);
     }
