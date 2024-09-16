@@ -23,15 +23,18 @@
 /* Slider */
 .slider {
   display: flex;
-  overflow-x: auto;
+  justify-content: center;
+  align-items: center;
+  overflow-x: none;
   gap: 2rem;
   padding: 1rem;
   scroll-snap-type: x mandatory;
+  flex-wrap: wrap;
 }
 
 /* Card de contribuidores */
 .card {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.2);
   border-radius: 15px;
   padding: 1rem;
   width: 300px;
@@ -123,3 +126,4 @@
 .info a:hover {
   color: #9d4edd;
 }
+

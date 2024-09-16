@@ -42,10 +42,10 @@ const contributors: Contributor[] = [
   },
   {
     name: 'Edvaldo Neto',
-    email: 'lucas.almeida@example.com',
+    email: 'edvaldorangel7@gmail.com',
     github: 'https://github.com/EdvaldoR7',
-    linkedin: 'https://www.linkedin.com/in/lucasalmeida/',
-    image: 'https://via.placeholder.com/150'
+    linkedin: 'https://www.linkedin.com/in/edvaldo-rangel-32093b326',
+    image: 'https://avatars.githubusercontent.com/u/180125653?v=4'
   }
 ];
 
