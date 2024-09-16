@@ -17,7 +17,6 @@ const About: React.FC = () => {
         </p>
         <div className={styles.ctaContainer}>
           <button className={styles.ctaButton}>Saiba Mais</button>
-          <button className={styles.ctaSecondaryButton}>Contato</button>
         </div>
       </div>
     </div>

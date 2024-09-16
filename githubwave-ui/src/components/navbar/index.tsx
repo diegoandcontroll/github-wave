@@ -1,8 +1,8 @@
-'use client'
-import React, { useState } from 'react';
-import { FaBars, FaTimes } from 'react-icons/fa'; // Ícones de menu e fechar
-import styles from './navbar.module.css';
-
+"use client";
+import React, { useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa"; // Ícones de menu e fechar
+import styles from "./navbar.module.css";
+import Link from "next/link";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,16 +13,39 @@ const Navbar = () => {
 
   return (
     <header className={styles.header}>
-      <div className={styles.logo}>
-        <h1>GitWave</h1>
-      </div>
-      <nav className={`${styles.nav} ${isOpen ? styles.open : ''}`}>
+      <Link href={"/"}>
+        <div className={styles.logo}>
+          <h1>GitWave</h1>
+        </div>
+      </Link>
+      <nav className={`${styles.nav} ${isOpen ? styles.open : ""}`}>
         <ul className={styles.navList}>
-          <li className={styles.navItem}><a href="#home">Home</a></li>
-          <li className={styles.navItem}><a href="#about">About</a></li>
-          <li className={styles.navItem}><a href="#contributors">Contributors</a></li>
-          <li className={styles.navItem}><a href="#signin">Sign In</a></li>
-          <li className={styles.navItem}><a href="#signup">Sign Up</a></li>
+          <Link href={"/"}>
+            <li className={styles.navItem}>
+              <a href="#home">Home</a>
+            </li>
+          </Link>
+          <Link href={"/about"}>
+            <li className={styles.navItem}>
+              <a href="#about">About</a>
+            </li>
+          </Link>
+          <Link href={"/contributors"}>
+            <li className={styles.navItem}>
+              <a href="#contributors">Contributors</a>
+            </li>
+          </Link>
+          <Link href={"/auth/signin"}>
+            <li className={styles.navItem}>
+              <a href="#signin">Sign In</a>
+            </li>
+          </Link>
+
+          <Link href={"/auth/signup"}>
+            <li className={styles.navItem}>
+              <a href="#signup">Sign Up</a>
+            </li>
+          </Link>
         </ul>
       </nav>
       <div className={styles.hamburger} onClick={toggleMenu}>
@@ -30,6 +53,6 @@ const Navbar = () => {
       </div>
     </header>
   );
-}
+};
 
-export default Navbar
+export default Navbar;

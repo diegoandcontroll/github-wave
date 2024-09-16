@@ -1,10 +1,9 @@
 /* Estilo principal do container */
 .main {
+  margin-top: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  background: rgba(0, 0, 0, 0.8); /* Fundo preto semi-transparente */
   color: white;
   padding: 2rem;
 }
@@ -17,13 +16,12 @@
   background-color: rgba(0, 0, 0, 0.6); /* Fundo escuro com transparência */
   border-radius: 15px;
   position: relative; /* Para os efeitos de neon */
-  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+  transition: box-shadow 0.3s ease-in-out;
   box-shadow: 0 0 15px rgba(90, 24, 154, 0.7); /* Sombra inicial */
 }
 
-/* Neon ao passar o mouse */
+/* Neon ao passar o mouse, sem zoom ao rolar */
 .hero:hover {
-  transform: scale(1.05); /* Zoom suave */
   box-shadow: 0 0 30px #5a189a, 0 0 60px #240090, 0 0 100px #1b1464; /* Efeito neon */
 }
 
