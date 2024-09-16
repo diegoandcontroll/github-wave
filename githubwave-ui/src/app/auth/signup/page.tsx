@@ -1,14 +1,14 @@
-'use client'
+'use client';
 import React, { useState } from "react";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { IoMdLogIn } from 'react-icons/io';
 import styles from './page.module.css';
+import Link from 'next/link';
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
-  const [showConfirmPassword, setShowConfirmPassword] = useState<boolean>(false);
 
   const togglePasswordVisibility = () => setShowPassword(!showPassword);
-  const toggleConfirmPasswordVisibility = () => setShowConfirmPassword(!showConfirmPassword);
 
   return (
     <div className={styles.container}>
@@ -54,7 +54,7 @@ const SignUp = () => {
           </div>
 
           <label htmlFor="confirm-password" className={styles.label}>Confirmar Senha:</label>
-          <div className={`${styles["input-wrapper"]} ${styles["password-wrapper"]}`}>
+          <div className={styles["input-wrapper"]}>
             <input
               type={showPassword ? "text" : "password"}
               id="confirm-password"
@@ -74,14 +74,18 @@ const SignUp = () => {
           <label htmlFor="image" className={styles.label}>Imagem de Perfil:</label>
           <input
             type="text"
-            placeholder="insira o link da sua imagem"
+            placeholder="Insira o link da sua imagem"
             id="image"
             name="image"
-            accept="image/*"
             className={styles.input}
           />
 
           <button type="submit" className={styles.button}>Cadastrar</button>
+
+          <p className={styles.loginPrompt}>
+            Já tem uma conta? <span><Link href="/auth/signin" className={styles.loginLink}>Faça login</Link>
+            </span>
+          </p>
         </form>
       </div>
     </div>

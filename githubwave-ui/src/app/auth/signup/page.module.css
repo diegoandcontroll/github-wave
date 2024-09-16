@@ -1,3 +1,4 @@
+/* container é o contêiner principal para centralizar o formulário */
 .container {
   overflow: hidden;
   display: flex;
@@ -7,22 +8,25 @@
   margin-top: 45px; /* Ajustar conforme a altura do navbar */
 }
 
+/* form-wrapper é o contêiner do formulário com fundo escuro e bordas arredondadas */
 .form-wrapper {
   background-color: rgba(0, 0, 0, 0.8);
-  padding: 1.5rem; /* Reduzido para diminuir a altura */
+  padding: 1.25rem; /* Reduzido para um tamanho compacto */
   border-radius: 15px;
   box-shadow: 0 0 20px rgba(90, 24, 154, 0.6);
   transition: box-shadow 0.3s ease-in-out;
   width: 100%;
-  max-width: 600px; /* Ajustado para um tamanho menor */
+  max-width: 500px; /* Ajustado para um tamanho menor */
 }
 
+/* Estilo de hover para o formulário */
 .form-wrapper:hover {
   box-shadow: 0 0 30px #5a189a, 0 0 60px #240090, 0 0 100px #1b1464;
 }
 
+/* heading é o título do formulário */
 .heading {
-  font-size: 1.8rem; /* Ajustado para menor */
+  font-size: 1.6rem; /* Ajustado para menor */
   color: #fff;
   text-align: center;
   margin-bottom: 1rem;
@@ -31,18 +35,21 @@
   -webkit-text-fill-color: transparent;
 }
 
+/* label é o estilo dos rótulos dos campos do formulário */
 .label {
   display: block;
-  font-size: 1rem;
+  font-size: 0.9rem; /* Ajustado para menor */
   color: #e0e0e0;
   margin-bottom: 0.5rem;
 }
 
+/* input-wrapper é o contêiner para inputs com ícones */
 .input-wrapper {
   position: relative;
-  margin-bottom: 1rem; /* Ajustado para espaçamento menor */
+  margin-bottom: 0.75rem; /* Ajustado para espaçamento compacto */
 }
 
+/* input é o estilo dos campos de entrada */
 .input {
   width: 100%;
   padding: 0.75rem;
@@ -51,16 +58,18 @@
   background-color: transparent;
   border-radius: 8px;
   color: white;
-  font-size: 1rem;
+  font-size: 0.9rem; /* Ajustado para menor */
   transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
+/* Estilo dos campos de entrada ao receber foco */
 .input:focus {
   outline: none;
   border-color: #5a189a;
   box-shadow: 0 0 10px #9d4edd;
 }
 
+/* icon é o estilo dos ícones para mostrar/esconder senha */
 .icon {
   position: absolute;
   right: 0.75rem;
@@ -70,20 +79,18 @@
   cursor: pointer;
 }
 
+/* password-wrapper é o estilo para os campos de senha lado a lado */
 .password-wrapper {
   display: flex;
-  gap: 1rem; /* Espaçamento entre os campos */
+  gap: 0.75rem; /* Espaçamento menor entre os campos */
 }
 
-.password-wrapper .input {
-  flex: 1; /* Ajusta a largura dos inputs para ficarem lado a lado */
-}
-
+/* button é o estilo do botão de envio do formulário */
 .button {
-  margin-top: 12px;
+  margin-top: 1rem;
   width: 100%;
   padding: 1rem;
-  font-size: 1.2rem;
+  font-size: 1rem; /* Ajustado para menor */
   font-weight: bold;
   background-color: #5a189a;
   color: white;
@@ -93,7 +100,27 @@
   transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
+/* Estilo de hover para o botão */
 .button:hover {
   background-color: #9d4edd;
   box-shadow: 0 0 20px #9d4edd;
+}
+
+/* loginPrompt é o estilo do parágrafo com o link para login */
+.loginPrompt {
+  margin-top: 1rem;
+  text-align: center;
+  color: #e0e0e0;
+}
+
+/* loginLink é o estilo do link para a página de login */
+.loginLink {
+  color: #5a189a;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Estilo do link ao passar o mouse */
+.loginLink:hover {
+  text-decoration: underline;
 }

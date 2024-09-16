@@ -89,3 +89,45 @@
   background-color: #9d4edd;
   box-shadow: 0 0 20px #9d4edd;
 }
+
+.githubButton {
+  background-color: #333;
+  border: 2px solid #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12px;
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.githubButton:hover {
+  background-color: #444;
+  border-color: #444;
+  box-shadow: 0 0 20px #444;
+}
+
+.githubIcon {
+  margin-right: 0.5rem;
+}
+
+.signupPrompt {
+  margin-top: 1rem;
+  text-align: center;
+  color: #e0e0e0;
+}
+
+.signupLink {
+  color: #5a189a;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.signupLink:hover {
+  text-decoration: underline;
+}

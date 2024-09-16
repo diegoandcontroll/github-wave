@@ -1,7 +1,8 @@
-'use client'
+'use client';
 import React, { useState } from "react";
-import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { FaEye, FaEyeSlash, FaGithub } from 'react-icons/fa';
 import styles from './page.module.css';
+import Link from 'next/link';
 
 const SignIn = () => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
@@ -42,6 +43,14 @@ const SignIn = () => {
           </div>
 
           <button type="submit" className={styles.button}>Entrar</button>
+
+          <button type="button" className={`${styles.button} ${styles.githubButton}`}>
+            <FaGithub className={styles.githubIcon} /> Login com GitHub
+          </button>
+
+          <p className={styles.signupPrompt}>
+            Não tem uma conta? <Link href="/auth/signup" className={styles.signupLink}>Crie uma aqui</Link>
+          </p>
         </form>
       </div>
     </div>
