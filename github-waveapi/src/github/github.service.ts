@@ -20,11 +20,7 @@ export class GithubService {
 
       // Tratar os dados do usuário
       const user = response.data;
-      return {
-        name: user.name,
-        bio: user.bio,
-        public_repos: user.public_repos,
-      };
+      return user;
     } catch (error) {
       throw new HttpException('User not found', HttpStatus.NOT_FOUND);
     }
