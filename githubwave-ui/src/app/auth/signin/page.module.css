@@ -1,0 +1,91 @@
+/* page.module.css */
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin-top: 45px; /* Ajustar conforme a altura do navbar */
+}
+
+.form-wrapper {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 1.5rem; /* Reduzido para diminuir a altura */
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(90, 24, 154, 0.6);
+  transition: box-shadow 0.3s ease-in-out;
+  width: 100%;
+  max-width: 400px; /* Ajustado para um tamanho menor */
+}
+
+.form-wrapper:hover {
+  box-shadow: 0 0 30px #5a189a, 0 0 60px #240090, 0 0 100px #1b1464;
+}
+
+.heading {
+  font-size: 1.8rem; /* Ajustado para menor */
+  color: #fff;
+  text-align: center;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #00b4d8, #5a189a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.label {
+  display: block;
+  font-size: 1rem;
+  color: #e0e0e0;
+  margin-bottom: 0.5rem;
+}
+
+.input-wrapper {
+  position: relative;
+  margin-bottom: 1rem; /* Ajustado para espaçamento menor */
+}
+
+.input {
+  width: 100%;
+  padding: 0.75rem;
+  padding-right: 2.5rem; /* Espaço para o ícone */
+  border: 2px solid rgba(90, 24, 154, 0.6);
+  background-color: transparent;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #5a189a;
+  box-shadow: 0 0 10px #9d4edd;
+}
+
+.icon {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #e0e0e0;
+  cursor: pointer;
+}
+
+.button {
+  margin-top: 12px;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #5a189a;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.button:hover {
+  background-color: #9d4edd;
+  box-shadow: 0 0 20px #9d4edd;
+}
