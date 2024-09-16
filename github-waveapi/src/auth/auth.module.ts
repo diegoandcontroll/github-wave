@@ -9,6 +9,7 @@ import { LocalStrategy } from './strategies/local.strategy';
 import { RolesGuard } from './guards/roles.guard';
 
 import { UsersModule } from '../users/users.module';
+import { GithubStrategy } from './strategies/github.strategy';
 @Module({
   imports: [
     UsersModule,
@@ -19,7 +20,13 @@ import { UsersModule } from '../users/users.module';
     }),
   ],
   controllers: [AuthController],
-  providers: [AuthService, LocalStrategy, JwtStrategy, RolesGuard],
+  providers: [
+    AuthService,
+    LocalStrategy,
+    JwtStrategy,
+    GithubStrategy,
+    RolesGuard,
+  ],
   exports: [AuthService],
 })
 export class AuthModule {}

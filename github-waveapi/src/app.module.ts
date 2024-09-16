@@ -6,7 +6,13 @@ import { UsersModule } from './users/users.module';
 import { GithubModule } from './github/github.module';
 
 @Module({
-  imports: [ConfigModule.forRoot(), UsersModule, AuthModule, PrismaModule, GithubModule],
+  imports: [
+    ConfigModule.forRoot(),
+    UsersModule,
+    AuthModule,
+    PrismaModule,
+    GithubModule,
+  ],
   controllers: [],
   providers: [PrismaModule],
 })
