@@ -12,7 +12,7 @@ const handler = NextAuth({
         password: { label: 'Password', type: 'password' },
       },
       async authorize(credentials) {
-        const res = await fetch('http://localhost:8080/api/gitwave/v1/auth/signin', {
+        const res = await fetch('https://github-wave.onrender.com/api/gitwave/v1/auth/signin', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({

@@ -36,7 +36,7 @@ const GithubUser = () => {
   const fetchUser = async () => {
     setLoading(true);
     try {
-      const userResponse = await fetch(`http://localhost:8080/api/gitwave/v1/github/user/${username}`);
+      const userResponse = await fetch(`https://github-wave.onrender.com/api/gitwave/v1/github/user/${username}`);
       const userData = await userResponse.json();
       setUser(userData);
       setHasData(!!userData);
@@ -52,7 +52,7 @@ const GithubUser = () => {
   const fetchRepos = async () => {
     setLoading(true);
     try {
-      const reposResponse = await fetch(`http://localhost:8080/api/gitwave/v1/github/repos/?page=${page}&perPage=${perPage}&username=${username}`);
+      const reposResponse = await fetch(`https://github-wave.onrender.com/api/gitwave/v1/github/repos/?page=${page}&perPage=${perPage}&username=${username}`);
       const reposData = await reposResponse.json();
       // Ordena repos por descrição e exibe os que têm descrição primeiro
       const sortedRepos = reposData.sort((a: Repo, b: Repo) => (b.description ? 1 : -1));
