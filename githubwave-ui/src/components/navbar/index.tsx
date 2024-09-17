@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from "react";
-import { FaBars, FaSignOutAlt, FaTimes } from "react-icons/fa"; // Ícones de menu e fechar
+import { FaBars, FaTimes } from "react-icons/fa"; // Ícones de menu e fechar
 import styles from "./navbar.module.css";
 import Link from "next/link";
 import { signOut, useSession } from "next-auth/react";
@@ -81,7 +81,6 @@ const Navbar = () => {
           {session?.user && ( 
           <li className={styles.navItem} onClick={handleSignOut}>
                 <span className={styles.signOutBtn}>
-                  <FaSignOutAlt size={20} />
                   <a href="#signout">Sign Out</a>
                 </span>
               </li>
