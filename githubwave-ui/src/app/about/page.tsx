@@ -15,9 +15,6 @@ const About: React.FC = () => {
         <p className={styles.description}>
           Desenvolvido com tecnologias modernas e práticas recomendadas, o GitWave visa facilitar a descoberta de novos projetos e a análise de atividade de usuários, combinando funcionalidade e estilo.
         </p>
-        <div className={styles.ctaContainer}>
-          <button className={styles.ctaButton}>Saiba Mais</button>
-        </div>
       </div>
     </div>
   );

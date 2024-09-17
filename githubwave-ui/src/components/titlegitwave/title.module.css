@@ -1,0 +1,45 @@
+.container {
+  text-align: center;
+  margin-top: 50px;
+  color: #fff;
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: bold;
+  background: linear-gradient(135deg, #ff6b6b, #f94dff, #3c91e6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #f94dff, 0 0 20px #ff6b6b, 0 0 30px #3c91e6, 0 0 40px #f94dff, 0 0 50px #ff6b6b;
+  }
+  to {
+    text-shadow: 0 0 20px #f94dff, 0 0 30px #ff6b6b, 0 0 40px #3c91e6, 0 0 50px #f94dff, 0 0 60px #ff6b6b;
+  }
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.8);
+  font-style: italic;
+  letter-spacing: 0.05em;
+  animation: fadeIn 3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

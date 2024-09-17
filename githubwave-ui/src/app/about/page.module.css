@@ -1,18 +1,21 @@
 /* Estilo principal do container */
 .main {
-  margin-top: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
   padding: 2rem;
+  width: 800px;
+  position: absolute;
+  top: 7rem;
+  right: 18rem;
 }
 
 /* Seção hero com efeito de neon */
 .hero {
   text-align: center;
+  padding: 1rem;
   max-width: 800px;
-  padding: 2rem;
   background-color: rgba(0, 0, 0, 0.6); /* Fundo escuro com transparência */
   border-radius: 15px;
   position: relative; /* Para os efeitos de neon */
@@ -61,14 +64,14 @@
 
 /* Subtítulo */
 .subtitle {
-  font-size: 1.8rem;
+  font-size: 1rem;
   margin-bottom: 1.5rem;
   color: #e0e0e0;
 }
 
 /* Descrição do projeto */
 .description {
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin-bottom: 1.5rem;
   color: #d0d0d0;
   line-height: 1.6;

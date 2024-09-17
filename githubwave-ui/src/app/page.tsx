@@ -1,7 +1,15 @@
+'use client'
+import { useToaster } from '@/contexts/toaster/ToasterContext';
 import styles from './page.module.css'
 
 export default function Home() {
+  const { dispatch } = useToaster();
+  const handleClick = () => {
+    dispatch({ type: 'ADD_MESSAGE', text: 'Hello, this is a toast!' });
+  };
+
   return (
+    <>
     <main className={styles.main}>
       <section className={styles.hero}>
         <h1 className={styles.title}>
@@ -12,9 +20,10 @@ export default function Home() {
         </p>
         <div className={styles.ctaContainer}>
           <button className={styles.ctaButton}>Explore Repositórios</button>
-          <button className={styles.ctaSecondaryButton}>Saiba Mais</button>
+          <button className={styles.ctaSecondaryButton} onClick={handleClick}>Saiba Mais</button>
         </div>
       </section>
     </main>
+    </>
   )
 }

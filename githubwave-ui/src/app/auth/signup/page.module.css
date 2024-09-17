@@ -6,11 +6,15 @@
   align-items: center;
   min-height: 100vh;
   margin-top: 45px; /* Ajustar conforme a altura do navbar */
+  position: absolute;
+  top: -1rem;
+  right: 15rem;
+  width: 65%;
 }
 
 /* form-wrapper é o contêiner do formulário com fundo escuro e bordas arredondadas */
 .form-wrapper {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.5);
   padding: 1.25rem; /* Reduzido para um tamanho compacto */
   border-radius: 15px;
   box-shadow: 0 0 20px rgba(90, 24, 154, 0.6);

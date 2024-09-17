@@ -51,9 +51,9 @@ const contributors: Contributor[] = [
 
 const Contributors: React.FC = () => {
   return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>Contribuidores do GitWave</h1>
-      <div className={styles.slider}>
+    <>
+      <div className={styles.container}>
+        <div className={styles.slider}>
         {contributors.map((contributor, index) => (
           <div key={index} className={styles.card}>
             <img src={contributor.image} alt={contributor.name} className={styles.image} />
@@ -70,15 +70,14 @@ const Contributors: React.FC = () => {
           </div>
         ))}
       </div>
-      <div className={styles.info}>
-        <h2>Sobre o GitWave</h2>
+      <div className={styles.infoprof}>
         <p>
           GitWave é uma ferramenta desenvolvida para a disciplina de Tópicos Essenciais de Programação da Uniesp, coordenada pelo professor 
           <a href="https://www.linkedin.com/in/wuldsonfranco/" target="_blank" rel="noopener noreferrer"> Wuldson Franco</a>. 
-          O projeto visa fornecer uma interface dinâmica para explorar repositórios e usuários do GitHub, combinando funcionalidades com um design moderno e atraente.
         </p>
       </div>
     </div>
+    </>
   );
 };
 

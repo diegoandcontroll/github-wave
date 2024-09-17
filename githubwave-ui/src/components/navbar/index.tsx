@@ -20,32 +20,47 @@ const Navbar = () => {
       </Link>
       <nav className={`${styles.nav} ${isOpen ? styles.open : ""}`}>
         <ul className={styles.navList}>
-          <Link href={"/"}>
-            <li className={styles.navItem}>
-              <a href="#home">Home</a>
-            </li>
-          </Link>
-          <Link href={"/about"}>
-            <li className={styles.navItem}>
-              <a href="#about">About</a>
-            </li>
-          </Link>
-          <Link href={"/contributors"}>
-            <li className={styles.navItem}>
-              <a href="#contributors">Contributors</a>
-            </li>
-          </Link>
-          <Link href={"/auth/signin"}>
-            <li className={styles.navItem}>
-              <a href="#signin">Sign In</a>
-            </li>
-          </Link>
+          <li className={styles.navItem}>
+            <Link href={"/"}>
+              <span>
+                <a href="#home">Home</a>
+              </span>
+            </Link>
+          </li>
 
-          <Link href={"/auth/signup"}>
+          <li className={styles.navItem}>
+            <Link href={"/about"}>
+              <span>
+                <a href="#about">About</a>
+              </span>
+            </Link>
+          </li>
+
+          <li className={styles.navItem}>
+            <Link href={"/contributors"}>
+              <span>
+                <a href="#contributors">Contributors</a>
+              </span>
+            </Link>
+          </li>
+
+          <li className={styles.navItem}>
+            <Link href={"/auth/signin"}>
+              <span>
+                <a href="#signin">Sign In</a>
+              </span>
+            </Link>
+          </li>
+
+          <span>
             <li className={styles.navItem}>
-              <a href="#signup">Sign Up</a>
+              <Link href={"/auth/signup"}>
+                <span>
+                  <a href="#signup">Sign Up</a>
+                </span>
+              </Link>
             </li>
-          </Link>
+          </span>
         </ul>
       </nav>
       <div className={styles.hamburger} onClick={toggleMenu}>

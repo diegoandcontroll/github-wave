@@ -3,6 +3,10 @@ import './globals.css'
 import { Inter } from 'next/font/google'
 import IconCarousel from '@/components/slider'
 import { FaGithub, FaJava, FaNodeJs, FaPython, FaReact } from 'react-icons/fa'
+import { ToasterProvider } from '@/contexts/toaster/ToasterContext'
+import BackgroundEffect from '@/components/bgeffect'
+import ImageSlider from '@/components/sliderimages'
+import GitWaveTitle from '@/components/titlegitwave'
 
 const inter = Inter({ subsets: ['latin'] })
 const defaultIcons = [
@@ -25,9 +29,14 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body className={`${inter.className}`}>
+       
+        <BackgroundEffect />
+        <ImageSlider />
         <IconCarousel />
         <Navbar />
-        {children}
+        <ToasterProvider>
+          {children}
+        </ToasterProvider>
       </body>
     </html>
   )

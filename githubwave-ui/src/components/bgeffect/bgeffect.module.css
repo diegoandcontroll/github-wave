@@ -1,0 +1,16 @@
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2; /* Ajusta o z-index para garantir que o background fique atrás de tudo */
+  background: linear-gradient(135deg, #1e0038, #240090, #1b1464);
+}
+
+.blurEffect {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.4); /* Overlay escuro */
+  z-index: -1; /* Mantém o blur acima do background, mas abaixo do slider */
+}
