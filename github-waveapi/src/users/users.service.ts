@@ -26,7 +26,7 @@ export class UsersService {
   // }
   async findOne(email: string, password: string) {
     try {
-      const user = await this.prisma.user.findUnique({ where: { email } });
+      const user = await this.prisma.user.findFirst({ where: { email } });
       const isMatch = await bcrypt.compare(password, user.password);
       if (user && isMatch) {
         return user;

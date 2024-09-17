@@ -13,7 +13,7 @@ async function bootstrap() {
     .setVersion('1.0')
     .addTag('by')
     .build();
-  app.enableCors();
+  app.enableCors({ origin: '*' });
   app.setGlobalPrefix('/api/gitwave/v1');
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('/api/gitwave/v1/docs', app, document);

@@ -1,12 +1,13 @@
-"use client";
+'use client'
 import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa"; // Ícones de menu e fechar
 import styles from "./navbar.module.css";
 import Link from "next/link";
+import { useSession } from "next-auth/react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const { data: session, status } = useSession();
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -43,7 +44,8 @@ const Navbar = () => {
               </span>
             </Link>
           </li>
-
+        {!session?.user && (
+          <>
           <li className={styles.navItem}>
             <Link href={"/auth/signin"}>
               <span>
@@ -52,7 +54,7 @@ const Navbar = () => {
             </Link>
           </li>
 
-          <span>
+          
             <li className={styles.navItem}>
               <Link href={"/auth/signup"}>
                 <span>
@@ -60,7 +62,20 @@ const Navbar = () => {
                 </span>
               </Link>
             </li>
-          </span>
+          
+          </>
+        )}
+          {session?.user && ( 
+            <>
+            <li className={styles.navItem}>
+              <Link href={"/info"}>
+                <span>
+                  <a href="#signup">Infos</a>
+                </span>
+              </Link>
+            </li>
+            </>
+          )}
         </ul>
       </nav>
       <div className={styles.hamburger} onClick={toggleMenu}>

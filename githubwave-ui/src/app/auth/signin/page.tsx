@@ -1,19 +1,44 @@
 'use client';
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { FaEye, FaEyeSlash, FaGithub } from 'react-icons/fa';
 import styles from './page.module.css';
 import Link from 'next/link';
+import { signIn } from 'next-auth/react'
+import { useToaster } from "@/contexts/toaster/ToasterContext";
+import { useRouter } from "next/navigation";
 
 const SignIn = () => {
-  const [showPassword, setShowPassword] = useState<boolean>(false);
+  const { dispatch } = useToaster();
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const router = useRouter();
+  const handleToast = () => {
+    dispatch({ type: 'ADD_MESSAGE', text: 'Login bem realizado!' });
+  };
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const res = await signIn('credentials', {
+      redirect: false,
+      username,
+      password,
+    });
 
+    if (res?.error) {
+      return null;
+    } else {
+      router.push('/');
+    }
+  };
+  const [showPassword, setShowPassword] = useState<boolean>(false);
   const togglePasswordVisibility = () => setShowPassword(!showPassword);
+  
+  
 
   return (
     <div className={styles.container}>
       <div className={styles["form-wrapper"]}>
         <h1 className={styles.heading}>Login</h1>
-        <form>
+        <form onSubmit={handleSubmit}>
           <label htmlFor="email" className={styles.label}>E-mail:</label>
           <input
             type="email"
@@ -22,6 +47,7 @@ const SignIn = () => {
             required
             placeholder="Digite seu e-mail"
             className={styles.input}
+            onChange={(e) => setUsername(e.target.value)}
           />
 
           <label htmlFor="password" className={styles.label}>Senha:</label>
@@ -33,6 +59,7 @@ const SignIn = () => {
               required
               placeholder="Digite sua senha"
               className={styles.input}
+              onChange={(e) => setPassword(e.target.value)}
             />
             <span
               className={styles.icon}
