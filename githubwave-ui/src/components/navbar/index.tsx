@@ -1,9 +1,9 @@
 'use client'
 import React, { useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa"; // Ícones de menu e fechar
+import { FaBars, FaSignOutAlt, FaTimes } from "react-icons/fa"; // Ícones de menu e fechar
 import styles from "./navbar.module.css";
 import Link from "next/link";
-import { useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,7 +11,9 @@ const Navbar = () => {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-
+  const handleSignOut = () => {
+    signOut();
+  };
   return (
     <header className={styles.header}>
       <Link href={"/"}>
@@ -75,6 +77,14 @@ const Navbar = () => {
               </Link>
             </li>
             </>
+          )}
+          {session?.user && ( 
+          <li className={styles.navItem} onClick={handleSignOut}>
+                <span className={styles.signOutBtn}>
+                  <FaSignOutAlt size={20} />
+                  <a href="#signout">Sign Out</a>
+                </span>
+              </li>
           )}
         </ul>
       </nav>
