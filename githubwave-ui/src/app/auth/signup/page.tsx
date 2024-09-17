@@ -23,7 +23,7 @@ const SignUp = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if(password === passwordC){
-      const res = await fetch('ttps://github-wave.onrender.com/api/gitwave/v1/auth/signup', {
+      const res = await fetch('https://github-wave.onrender.com/api/gitwave/v1/auth/signup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
